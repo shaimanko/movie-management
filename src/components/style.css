@@ -1,0 +1,99 @@
+.table-container > div > div {
+    display: grid;
+    grid-template-columns: 16.67% 16.67% 16.67% 16.67% 16.67% 16.67%;
+    grid-row-gap: 5px;
+}
+
+.table-container > .table-title {
+    font-weight: bold;
+}
+
+.table-container > .table-title,
+.table-container > .table-record {
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.table-container > .table-title > div > div,
+.table-container > .table-record > div > div {
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.table-container > .table-record,
+.table-container > .table-record > div > div {
+    border-top: none;
+}
+
+.table-container > .table-record > div > div {
+    display: table;
+    height: 100%;
+}
+
+.table-container > .table-record > div > div > input {
+    height: 100%;
+    vertical-align: middle;
+}
+
+.table-container > .table-record > div > div > span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table-container > .table-record > div > .name-tag {
+    text-align: left;
+    padding-left: 4px;
+}
+
+.table-container > .table-record > .table-no-content {
+    grid-template-columns: none;
+    padding: 50px 0;
+    border-left: 1px solid rgba(0, 0, 0, 1);
+    border-right: 1px solid rgba(0, 0, 0, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(71, 68, 68, 0.3);
+    padding: 50px;
+}
+
+.backdrop .modal-container {
+    background: #ffffff;
+    border-radius: 5px;
+    max-width: 50%;
+    min-height: 50%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.modal-container .title-section {
+    text-align: center;
+}
+
+.modal-container .button-section {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-container .form-section label {
+    font-weight: bold;
+}
+
+.modal-container .form-section input {
+    width: 100%;
+}
