@@ -4,14 +4,29 @@
     grid-row-gap: 5px;
 }
 
-.table-container > .table-title {
-    font-weight: bold;
+.table-container > .table-title span {
+    float: right;
+    padding-right: 3px;
+}
+
+.table-container > .table-title > div {
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 .table-container > .table-title,
 .table-container > .table-record {
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.table-container > .table-title {
+    border-bottom: none;
+    font-weight: bold;
 }
 
 .table-container > .table-title > div > div,
@@ -19,10 +34,10 @@
     border: 1px solid rgba(0, 0, 0, 1);
 }
 
-.table-container > .table-record,
+/*.table-container > .table-record,
 .table-container > .table-record > div > div {
     border-top: none;
-}
+}*/
 
 .table-container > .table-record > div > div {
     display: table;

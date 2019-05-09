@@ -54,3 +54,8 @@
 .movie-container .delete-button:hover {
   background-color: rgba(157, 0, 56, 1);
 }
+
+.movie-container .filter-section {
+  float: right;
+  margin: 12px;
+}

@@ -14,9 +14,12 @@ const createRecord = formData => ({
 	payload: formData
 })
 
-const editRecord = recordId => ({
+const editRecord = (editItem, formData) => ({
 	type: actionTypes.EDIT_RECORD,
-	payload: recordId
+	payload: {
+		editItem,
+		formData
+	}
 })
 
 const deleteRecord = recordId => ({

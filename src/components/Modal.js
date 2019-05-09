@@ -7,14 +7,7 @@ import './style.css'
 
 class Modal extends React.Component {
 	render() {
-		const { open, closeModal, submitModal, onChanged, submitType, items, editItem } = this.props
-		let pos
-		console.log(editItem, open)
-		for (let i in items) {
-			if (items[i].id === parseInt(editItem)) {
-				pos = i
-			}
-		}
+		const { open, closeModal, submitModal, onChanged, submitType, formData } = this.props
 
 		return (
 			<div className={`backdrop ${open ? "show" : "hide"}`}>
@@ -24,10 +17,11 @@ class Modal extends React.Component {
 					</div>
 					<div className="form-section">
 						<form className="form-component">
-							<Input label="Poster" name="poster" onChange={onChanged} value={editItem !== null ? items[pos].poster : ''} />
-							<Input label="Name" name="name" onChange={onChanged} value={editItem !== null ? items[pos].name : ''} />
-							<Input label="Category" name="category" onChange={onChanged} value={editItem !== null ? items[pos].category : ''} />
-							<Input label="Status" name="status" onChange={onChanged} value={editItem !== null ? items[pos].status : ''} />
+							<Input label="Poster" name="poster" onChange={onChanged} value={formData.poster} />
+							<Input label="Movie Name" name="name" onChange={onChanged} value={formData.name} />
+							<Input label="Synopsis" name="synopsis" onChange={onChanged} value={formData.synopsis} />
+							<Input label="Category" name="category" onChange={onChanged} value={formData.category} />
+							<Input label="Status" name="status" onChange={onChanged} value={formData.status} />
 						</form>
 					</div>
 					<div className="button-section">
