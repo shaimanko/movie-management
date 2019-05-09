@@ -15,14 +15,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       items: [],
-      title: [
-        { name: '', sort: 'ASC' },
-        { name: '#', sort: 'ASC' },
-        { name: 'Poster', sort: 'ASC' },
-        { name: 'Name', sort: 'ASC' },
-        { name: 'Category', sort: 'ASC' },
-        { name: 'Status', sort: 'ASC' },
-      ],
+      title: [],
       formData: {
         poster: '',
         name: '',
@@ -42,6 +35,16 @@ class App extends React.Component {
   }
 
   componentWillMount() {
+    this.setState({
+      title: [
+        { name: '', sort: 'ASC' },
+        { name: '#', sort: 'ASC' },
+        { name: 'Poster', sort: 'ASC' },
+        { name: 'Name', sort: 'ASC' },
+        { name: 'Category', sort: 'ASC' },
+        { name: 'Status', sort: 'ASC' }
+      ]
+    })
     this.generateItems()
   }
 
@@ -62,7 +65,12 @@ class App extends React.Component {
 
     await this.props.deleteRecord(deleteItems)
 
-    if (this.props.response === 'SUCCESS') this.generateItems()
+    if (this.props.response === 'SUCCESS') {
+      this.setState({
+        deleteItems: []
+      })
+      this.generateItems()
+    }
   }
 
   handleClick = (e) => {

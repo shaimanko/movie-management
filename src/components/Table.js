@@ -14,7 +14,7 @@ class Table extends React.Component {
 			<div className="table-container">
 				<div className="table-title">
 					<div>
-						{title.length > 0 && title.map(item => (
+						{title && title.length > 0 && title.map(item => (
 							<div key={item.name} id={item.name} onClick={sortItems}>
 								{item.name}
 								{((item.name === 'Name' || item.name === 'Category' || item.name === 'Status') && items.length > 0) &&
@@ -30,7 +30,7 @@ class Table extends React.Component {
 					</div>
 				</div>
 				<div className="table-record">
-					{items.length > 0 && items.map(item => (
+					{items && items.length > 0 && items.map(item => (
 						<div key={item.id}>
 							<div>
 								<input type="checkbox" value={item.id} onClick={onSelectedItem} />

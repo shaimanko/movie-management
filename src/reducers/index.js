@@ -26,12 +26,14 @@ const initialState = {
 	response: null
 }
 
+// localStorage.setItem('items', JSON.stringify(initialState.items))
+
 export default (state = initialState, action) => {
 	const newItems = state.items
 	const newEvent = action.payload
 	switch (action.type) {
 		case actions.actionTypes.GET_RECORD:
-			const items = JSON.parse(localStorage.getItem('items'))
+			const items = JSON.parse(localStorage.getItem('items')) || initialState.items
 			return {
 				...state,
 				items,
